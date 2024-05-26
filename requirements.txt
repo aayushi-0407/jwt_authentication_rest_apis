@@ -7,4 +7,4 @@ flask-migrate
 flask-smorest
 sqlalchemy
 flask-sqlalchemy
-flask_marshmallow
+flask-marshmallow
