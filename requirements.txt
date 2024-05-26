@@ -1,0 +1,9 @@
+flask
+flask-RESTful
+flask-jwt-extended
+passlib
+textblob
+flask-migrate
+flask-smorest
+sqlalchemy
+flask-sqlalchemy
