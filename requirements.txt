@@ -8,3 +8,4 @@ flask-smorest
 sqlalchemy
 flask-sqlalchemy
 flask-marshmallow
+flask-swagger-ui
