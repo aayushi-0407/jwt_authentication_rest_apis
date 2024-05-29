@@ -7,5 +7,7 @@ flask-migrate
 flask-smorest
 sqlalchemy
 flask-sqlalchemy
+flask
 flask-marshmallow
 flask-swagger-ui
+marshmallow

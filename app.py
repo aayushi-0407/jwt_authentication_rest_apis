@@ -15,7 +15,7 @@ app = Flask(__name__)
 
 
 # Setup the Flask-JWT-Extended extension
-app.config["JWT_SECRET_KEY"]=  '35971377031082163320083521291083712705'
+app.config["JWT_SECRET_KEY"]=  secrets.token_hex(64)
 jwt=JWTManager(app)
 
 app.config["API_TITLE"] = "Flask API"
@@ -58,15 +58,14 @@ def expired_token_callback(jwt_header, jwt_payload):
     }), 401
 
 
-SWAGGER_URL = '/swagger'
-API_URL = '/apidocs/swagger.json'
+# Swagger UI Setup
+SWAGGER_URL = app.config["OPENAPI_SWAGGER_UI_PATH"]
+API_URL = f'{app.config["OPENAPI_URL_PREFIX"]}/openapi.json'
 
 swaggerui_blueprint = get_swaggerui_blueprint(
     SWAGGER_URL,
     API_URL,
-    config={
-        'app_name': "app"
-    }
+    config={'app_name': "app"}
 )
 
 app.register_blueprint(swaggerui_blueprint, url_prefix=SWAGGER_URL)
